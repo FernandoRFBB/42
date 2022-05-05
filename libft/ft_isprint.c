@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 16:14:50 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 17:31:50 by fbittenc         ###   ########.fr       */
+/*   Created: 2022/05/05 16:16:49 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/05 17:55:18 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
-#include <stdio.h>
-int	ft_isalpha(int c)
+
+int ft_isprint(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
-		return (2);
-	}
-	return 0;
+    if (c >= 32 && c <= 126)
+        return (1);
+    else
+        return (0);
 }
 

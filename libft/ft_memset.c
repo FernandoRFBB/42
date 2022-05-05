@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 16:14:50 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 17:31:50 by fbittenc         ###   ########.fr       */
+/*   Created: 2022/05/05 18:32:11 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/05 19:38:42 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
-int	ft_isalpha(int c)
+void *memset(void *b, int c, size_t len)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
-		return (2);
-	}
-	return 0;
-}
+	int	x;
+	char *str;
 
+	x = 0;
+	str = (char *) b;
+
+	while (++x < len)
+	{
+		str[x] = c;
+	}
+	return (b);
+}

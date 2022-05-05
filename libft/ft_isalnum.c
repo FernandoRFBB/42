@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 16:14:05 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/05 17:31:33 by fbittenc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <ctype.h>
 
@@ -10,8 +22,3 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
-int	main(void)
-{
-	printf("Teste : %d\n", ft_isalnum('A'));
-	printf("Padrao: %d\n", isalnum('3'));
-}

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 16:14:50 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 17:31:50 by fbittenc         ###   ########.fr       */
+/*   Created: 2022/05/03 16:14:25 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/05 17:57:15 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (2);
+		return (c + 32);
 	}
-	return 0;
+	return (c);
 }
 

@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 16:15:56 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/05 17:54:35 by fbittenc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ctype.h>
 
 int	ft_isdigit(int c)
@@ -10,8 +21,3 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	main(void)
-{
-	printf("Teste : %d\n", ft_isdigit(14));
-	printf("Padrao: %d\n", isdigit(14));
-}
