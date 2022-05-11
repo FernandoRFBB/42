@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:22:59 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 18:09:34 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:22:54 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,32 @@ int main(void)
 	memmove(strMEMMOVE_P, str, strlen(str));
 	ft_memmove(strMEMMOVE_M, str, strlen(str));
 	printf("MEMMOVE P: %s\n", strMEMMOVE_P);
-        printf("MEMMOVE M: %s\n", strMEMMOVE_M);
-        printf("---------------------------------------------------------\n");
+    printf("MEMMOVE M: %s\n", strMEMMOVE_M);
+    printf("---------------------------------------------------------\n");
 
-//	char strSTRLCPY_P[20] = "AAAAAAAAAA";
-//	char strSTRLCPY_M[20] = "AAAAAAAAAA";
+	char strSTRLCPY_P[20] = "AAAAAAAAAA";
+	char strSTRLCPY_M[20] = "AAAAAAAAAA";
+	size_t STRL_P = strlcpy(strSTRLCPY_P, str, 10);
+	size_t STRL_M = ft_strlcpy(strSTRLCPY_M, str, 10);
+	printf("STRLCPY P: %s || %ld\n", strSTRLCPY_P, STRL_P);
+	printf("STRLCPY M: %s || %ld\n", strSTRLCPY_M, STRL_M);
+	printf("---------------------------------------------------------\n");
 
-//	size_t STRL_P = strlcpy(strSTRLCPY_P, str, 4);
-//	size_t STRL_M = ft_strlcpy(strSTRLCPY_M, str, 4);
-//	printf("STRLCPY P: %s || %ld\n", strSTRLCPY_P, STRL_P);
-//      printf("STRLCPY M: %s || %ld\n", strSTRLCPY_M, STRL_M);
-//    printf("---------------------------------------------------------\n");
+	char s[15] = "0343";
+    char x[40] = "Olasdf";
+	char minha[40] = "Olasdf";
+
+	printf("STRLCAT P: %zu\n", strlcat(x, s, 20));
+	printf("S: %s || X: %s\n", s, x);
+	printf("_-------------------------------_\n");
+	printf("STRLCAT M: %zu\n", ft_strlcat(minha, s, 20));
+	printf("S: %s || X: %s\n", s, x);
+    printf("---------------------------------------------------------\n");
+	
+	char *a = "Teste123456";
+	
+	printf("String: %s\n", a);
+	printf("Resultado P: %s\n", memchr(a, '1', 10));
+	printf("Resultado M: %s\n", ft_memchr(a, '1', 10));
 	return (0);
 }
