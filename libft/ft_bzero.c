@@ -14,7 +14,7 @@
 
 void ft_bzero(void *s, size_t n)
 {
-    int x;
+    size_t x;
     char *temp;
     
     x = 0;

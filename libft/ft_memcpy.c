@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+#include "libft.h"
+
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     char *empty;
     char *str;
-    int x;
+    size_t x;
     
     empty = (char *) dest;
     str = (char *) src;
@@ -25,6 +27,6 @@ void *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
         empty[x] = str[x];
         x++;
     }
-    
+    return (dest);
 }
 
