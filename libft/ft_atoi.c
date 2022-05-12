@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 17:42:17 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/12 17:24:32 by fbittenc         ###   ########.fr       */
+/*   Created: 2022/05/12 17:54:08 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/12 18:31:47 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+static int ft_isspace(int c)
 {
-	size_t	x;
+    if (c == '\t' || c == '\n' || c == '\v' || c == '\f' ||
+        c == '\r' || c == ' ')
+    {
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+int ft_atoi(const char *str)
+{
+	int	x;
+	int answer;
+	char *temp;
 
 	x = 0;
-	while ((s1[x] || s2[x]) && x < n)
+	answer = 0;
+	temp = (char *) str;
+	while (str[x])
 	{
-		if (s1[x] != s2[x])
-			return (s1[x] - s2[x]);
+		if (ft_isalpha(str[x]) != 0 || ft_isspace(str[x]) != 0)
+			break;
+		answer = answer * 10 + str[x] - 48;
 		x++;
 	}
-	return (0);
+	return (answer);
 }
 

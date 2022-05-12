@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:22:59 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/11 19:22:54 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:33:06 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,81 @@ int main(void)
     printf("---------------------------------------------------------\n");
 	
 	char *a = "Teste123456";
-	
+	printf("MEMCHR\n");	
 	printf("String: %s\n", a);
 	printf("Resultado P: %s\n", memchr(a, '1', 10));
 	printf("Resultado M: %s\n", ft_memchr(a, '1', 10));
-	return (0);
+	printf("---------------------------------------------------------\n");
+	
+	char up = 'f';
+	printf("TOUPPER\n");
+	printf("Char: %c\n", up);
+	printf("Resultado P: %c\n", toupper(up));
+	printf("Resultado M: %c\n", ft_toupper(up));
+	printf("---------------------------------------------------------\n");
+	
+	char lower = 'F';
+    printf("TOLOWER\n");
+    printf("Char: %c\n", lower);
+    printf("Resultado P: %c\n", tolower(lower));
+    printf("Resultado M: %c\n", ft_tolower(lower));
+	printf("---------------------------------------------------------\n");
+
+	char *teste = "fernando.42.br";
+	printf("STRCHR\n");
+	printf("String: %s\n", teste);
+	printf("Resultado P: %s\n", strchr(teste, '.'));
+	printf("Resultado M: %s\n", ft_strchr(teste, '.'));
+	printf("---------------------------------------------------------\n");
+	
+    printf("STRRCHR\n");
+    printf("String: %s\n", teste);
+    printf("Resultado P: %s\n", strrchr(teste, '.'));
+    printf("Resultado M: %s\n", ft_strrchr(teste, '.'));
+    printf("---------------------------------------------------------\n");
+	
+	char *teste2 = "ferNANDO";
+	printf("STRNCMP\n");
+    printf("String1: %s\n", teste);
+	printf("String2: %s\n", teste2);
+    printf("Resultado P: %d\n", strncmp(teste, teste2, 3));
+    printf("Resultado M: %d\n", ft_strncmp(teste, teste2, 3));
+    printf("---------------------------------------------------------\n");
+
+	const void *teste3 = "ferNANDO.42.BR";
+	const void *teste4 = "fernando";
+    printf("MEMCMP\n");
+    printf("String1: %s\n", teste3);
+    printf("String2: %s\n", teste4);
+    printf("Resultado P: %d\n", memcmp(teste3, teste4, 3));
+    printf("Resultado M: %d\n", ft_memcmp(teste3, teste4, 3));
+    printf("---------------------------------------------------------\n");
+
+	const char *procurar = "teste123";
+	const char *achar = "ste";
+
+	printf("STRNSTR\n");
+    printf("String: %s\n", procurar);
+    printf("Achar: %s\n", achar);
+    printf("Resultado P: %s\n", strnstr(procurar, achar, 5));
+    printf("Resultado M: %s\n", ft_strnstr(procurar, achar, 5));
+    printf("---------------------------------------------------------\n");
+
+	const char *num = "42ba234";
+	printf("ATOI\n");
+	printf("String: %s\n", num);
+	printf("Resultado P: %d\n", atoi(num));
+	printf("Resultado M: %d\n", ft_atoi(num));
+	printf("---------------------------------------------------------\n");
+
+	char *recebe_p;
+	char *recebe_m;
+	
+	recebe_p = strdup(procurar);
+	recebe_m = ft_strdup(procurar);
+    printf("STRDUP\n");
+    printf("String: %s\n", num);
+    printf("Resultado P: %s\n", recebe_p);
+    printf("Resultado M: %s\n", recebe_m);
+
 }
