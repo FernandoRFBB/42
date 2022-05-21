@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:27:47 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 18:03:43 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:44:32 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_strchr(const char *s, int c)
 	while (temp[x])
 	{
 		if (temp[x] == c)
-			break;
+			return (&temp[x]);
 		x++;
 	}
-	if (temp[x])
-		return &temp[x];
+	if (c == '\0')
+		return (&temp[x]);
 	else
-		return NULL;
+		return (NULL);
 }
 

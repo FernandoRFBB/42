@@ -6,12 +6,15 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:20:42 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 17:32:14 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:41:31 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	return (c);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }
 

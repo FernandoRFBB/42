@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:21:22 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/12 19:34:21 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:29:19 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char *ft_strdup(const char *s1)
 	x = 0;
 	temp = (char *) s1;
 	answer = malloc(sizeof(char) * ft_strlen(temp) + 1);
+	if (!answer)
+		return (NULL);
 	while (temp[x])
 	{
 		answer[x] = temp[x];

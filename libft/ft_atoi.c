@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:54:08 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/12 18:31:47 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:26:28 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,35 @@ static int ft_isspace(int c)
 {
     if (c == '\t' || c == '\n' || c == '\v' || c == '\f' ||
         c == '\r' || c == ' ')
-    {
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 
 int ft_atoi(const char *str)
 {
 	int	x;
+	int signal;
 	int answer;
 	char *temp;
 
 	x = 0;
 	answer = 0;
+	signal = 1;
 	temp = (char *) str;
-	while (str[x])
+	while (ft_isspace(temp[x]))
+		x++;
+	if (str[x] == '-' || str[x] == '+')
 	{
-		if (ft_isalpha(str[x]) != 0 || ft_isspace(str[x]) != 0)
-			break;
+		if (str[x] == '-')
+			signal = -1;
+		x++;
+	}
+	while (ft_isdigit(str[x]))
+	{
 		answer = answer * 10 + str[x] - 48;
 		x++;
 	}
-	return (answer);
+	return (answer * signal);
 }
 

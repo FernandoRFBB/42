@@ -6,7 +6,7 @@
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:54:54 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/05 18:04:06 by fbittenc         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:02:02 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
+	size_t	x;
+	size_t	len;
 	char	*temp;
-	int	x;
-	int	size;
 
 	temp = (char *) s;
-	size = 0;
-
-	while (temp[size])
-		size++;
-	x = size;
-	while (temp[x - 1])
+	x = 0;
+	len = ft_strlen(temp);
+	while ((int)len >= 0)
 	{
-		if (temp[x - 1] == c)
-			break;
-		x--;
+		if (temp[len] == c)
+			return (&temp[len]);
+		len--;
 	}
-	if (x == 0)
-		return NULL;
-	else
-		return &temp[x - 1];
+	return (NULL);
 }
 

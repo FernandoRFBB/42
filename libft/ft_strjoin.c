@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbittenc <fbittenc@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 16:29:56 by fbittenc          #+#    #+#             */
-/*   Updated: 2022/05/17 18:24:28 by fbittenc         ###   ########.fr       */
+/*   Created: 2022/05/17 15:55:52 by fbittenc          #+#    #+#             */
+/*   Updated: 2022/05/17 19:37:01 by fbittenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	size_t x;
+	size_t	x;
+	size_t	y;
+	char	*temp;
+	char	*answer;
 
 	x = 0;
-	if (ft_strlen(src) + 1 < dstsize)
+	y = 0;
+	temp = (char *) s1;
+	answer = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!answer)
+		return (NULL);
+	while (x < ft_strlen(s1))
 	{
-		while (src[x])
-		{
-			dst[x] = src[x];
-			x++;
-		}
-		dst[x] = '\0';
-	} else if (dstsize != 0)
-	{
-		while (x < dstsize - 1)
-		{
-			dst[x] = src[x];
-			x++;
-		}
-		dst[x] = '\0';
+		answer[x] = temp[x];
+		x++;
 	}
-	return (ft_strlen(src));
+	temp = (char *) s2;
+	while (y < ft_strlen(s2))
+	{
+		answer[x] = temp[y];
+		x++;
+		y++;
+	}
+	answer[x] = '\0';
+	return (answer);
 }
